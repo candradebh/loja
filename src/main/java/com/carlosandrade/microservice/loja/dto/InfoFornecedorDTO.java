@@ -1,4 +1,4 @@
-package br.com.alura.microservice.loja.dto;
+package com.carlosandrade.microservice.loja.dto;
 
 public class InfoFornecedorDTO {
 

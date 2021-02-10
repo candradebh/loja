@@ -1,4 +1,4 @@
-package br.com.alura.microservice.loja.service;
+package com.carlosandrade.microservice.loja.service;
 
 import java.time.LocalDate;
 
@@ -7,18 +7,17 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.carlosandrade.microservice.loja.client.FornecedorClient;
+import com.carlosandrade.microservice.loja.client.TransportadorClient;
+import com.carlosandrade.microservice.loja.dto.CompraDTO;
+import com.carlosandrade.microservice.loja.dto.InfoEntregaDTO;
+import com.carlosandrade.microservice.loja.dto.InfoFornecedorDTO;
+import com.carlosandrade.microservice.loja.dto.InfoPedidoDTO;
+import com.carlosandrade.microservice.loja.dto.VoucherDTO;
+import com.carlosandrade.microservice.loja.model.Compra;
+import com.carlosandrade.microservice.loja.model.CompraState;
+import com.carlosandrade.microservice.loja.repository.CompraRepository;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-
-import br.com.alura.microservice.loja.client.FornecedorClient;
-import br.com.alura.microservice.loja.client.TransportadorClient;
-import br.com.alura.microservice.loja.dto.CompraDTO;
-import br.com.alura.microservice.loja.dto.InfoEntregaDTO;
-import br.com.alura.microservice.loja.dto.InfoFornecedorDTO;
-import br.com.alura.microservice.loja.dto.InfoPedidoDTO;
-import br.com.alura.microservice.loja.dto.VoucherDTO;
-import br.com.alura.microservice.loja.model.Compra;
-import br.com.alura.microservice.loja.model.CompraState;
-import br.com.alura.microservice.loja.repository.CompraRepository;
 
 @Service
 public class CompraService {

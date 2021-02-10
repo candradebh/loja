@@ -1,4 +1,4 @@
-package br.com.alura.microservice.loja.controller;
+package com.carlosandrade.microservice.loja.controller.auth;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -9,25 +9,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.alura.microservice.loja.dto.CompraDTO;
-import br.com.alura.microservice.loja.model.Compra;
-import br.com.alura.microservice.loja.service.CompraService;
+import com.carlosandrade.microservice.loja.dto.CompraDTO;
+import com.carlosandrade.microservice.loja.dto.UsuarioDTO;
+import com.carlosandrade.microservice.loja.model.Compra;
+import com.carlosandrade.microservice.loja.model.Usuario;
+import com.carlosandrade.microservice.loja.service.CompraService;
 
 @RestController
-@RequestMapping("/compra")
-public class CompraController {
+@RequestMapping("/auth")
+public class LoginController {
 	
-	@Autowired
-	private CompraService compraService;
 	
-	@RequestMapping("/{id}")
-	public Compra getById(@PathVariable("id") Long id) {
-		return compraService.getById(id);
-	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public Compra realizaCompra(@RequestBody CompraDTO compra) {
+	public Authentication realizaCompra(@RequestBody UsuarioDTO usuario) {
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-		return compraService.realizaCompra(compra);
+		return authentication;
 	}
 }

@@ -1,4 +1,4 @@
-package br.com.alura.microservice.loja.model;
+package com.carlosandrade.microservice.loja.model;
 
 import java.time.LocalDate;
 
