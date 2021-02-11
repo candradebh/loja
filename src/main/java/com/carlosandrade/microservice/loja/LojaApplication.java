@@ -25,8 +25,6 @@ import feign.RequestTemplate;
 @EnableResourceServer
 public class LojaApplication {
 	
-	
-	
 	@Bean
 	public RequestInterceptor getInterceptorDeAutenticacao() {
 		return new RequestInterceptor() {
